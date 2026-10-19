@@ -961,7 +961,7 @@
 
   <script>
     // ضع رابط Google Apps Script الخاص بك هنا بعد نشره
-    const GOOGLE_SCRIPT_URL = "PUT_YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw0epMLo1MNS2zmzpJn9iB6VfcNPxK03pKVMYZ2O8Oniw30NBYhoXQ4XGT4npIRFoRy/exec";
 
     // توليد وترتيب مناطق السويس عشوائياً في كل مرة يفتح فيها العميل الموقع
     const suezLocations = [
@@ -1204,7 +1204,7 @@
         wall_of_fame: (answers['wall_of_fame'] || []).join(', ')
       };
 
-      if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "PUT_YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE") {
+      if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbw0epMLo1MNS2zmzpJn9iB6VfcNPxK03pKVMYZ2O8Oniw30NBYhoXQ4XGT4npIRFoRy/exec") {
         fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
