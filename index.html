@@ -1204,21 +1204,23 @@
         wall_of_fame: (answers['wall_of_fame'] || []).join(', ')
       };
 
-      if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbzy-cnIMZxt-2ePW-ASbcPNGH0oKQrUrE22MKFVQmebFc6g-Od1peiar0GVP4BMeQQ1/exec") {
-        fetch(GOOGLE_SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzy-cnIMZxt-2ePW-ASbcPNGH0oKQrUrE22MKFVQmebFc6g-Od1peiar0GVP4BMeQQ1/exec";
+
+       if (GOOGLE_SCRIPT_URL) {
+       fetch(GOOGLE_SCRIPT_URL, {
+       method: 'POST',
+       mode: 'no-cors',
+       headers: {
       'Content-Type': 'text/plain;charset=utf-8'
-    },
-    body: JSON.stringify(payload)
-  }).finally(() => {
-    nextStep();
-  });
-} else {
-  alert('رابط Google Sheets غير مضبوط');
-  submitBtn.disabled = false;
-}
+      },
+      body: JSON.stringify(payload)
+      }).finally(() => {
+      nextStep();
+      });
+      } else {
+      alert('رابط Google Sheets غير مضبوط');
+      submitBtn.disabled = false;
+      }
     }
 
     function showToast(msg) {
